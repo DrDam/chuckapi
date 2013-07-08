@@ -2,10 +2,7 @@
 
 function chuck_page_form() {
   $form = array();
-
-  $form['validation'] = array(
-    '#markup' => chuck_get_validation(),
-  );
+  chuck_get_validation();
 
   $form['params'] = array(
     '#type' => 'fieldset',
@@ -69,5 +66,10 @@ function chuck_page_form() {
 function chuck_get_validation()
 {
   module_load_include('inc', 'chuck_api');
-  chuck_api_validation();
+  $bool = chuck_api_validation();
+  
+  return ($bool == TRUE) 
+            ? drupal_set_message(t('ChuckNorrisFacts-fr contacted !'))
+            : drupal_set_message(t('Can\'t contact ChuckNorrisFacts-fr'),'error')
+    ;
 }
