@@ -1,0 +1,19 @@
+<?php
+
+/**
+* Implements hook_menu();
+*/
+function chuck_api_menu() {
+  $items = array() ;
+  
+  $items['admin/config/services/chucknorrisfacts'] = array(
+     'title' => t('API configuration'),
+     'description' => t('ChuckNorrisFacts-fr Interface configuration'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('chuck_page_form'),
+     'access arguments' => array('access content'),
+     'file' => 'chuck_api.pages.inc'
+  );
+  
+  return $items;
+}

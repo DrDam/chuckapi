@@ -1,0 +1,7 @@
+name = chuck_api
+description = Module to provide interface between drupal & chucknorrisfacts.fr API
+core = 7.x
+package = ChuckNorrisFacts
+version = 7.x-1.x
+files[] = chuck_api.inc
+configure = admin/config/ChuckNorrisFacts
