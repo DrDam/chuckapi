@@ -1,0 +1,31 @@
+<?php
+
+/**
+* Implements hook_block_info();
+*/
+function chuck_block_block_info() {
+  // This example comes from node.module.
+  $blocks['chuck_norris_facts_fr'] = array(
+    'info' => t('chuck_norris_facts_fr'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+
+/**
+* Implements hook_block_view();
+*/
+function chuck_block_block_view($delta = '') {
+  
+   $block = array();
+   
+   if($delta == 'chuck_norris_facts_fr')
+   {
+      $block['subject'] = t('A Random fact');
+      $block['content'] = '<p>'.chuck_api_simple_fact().'</p>';
+   }
+   
+   return $block;
+}
+

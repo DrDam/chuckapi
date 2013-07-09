@@ -63,13 +63,12 @@ function chuck_page_form() {
   return system_settings_form($form);
 }
 
-function chuck_get_validation()
-{
-  module_load_include('inc', 'chuck_api');
-  $bool = chuck_api_validation();
-  
+function chuck_get_validation() {
+
+  $bool = chuck_api_ping();
+
   return ($bool == TRUE) 
-            ? drupal_set_message(t('ChuckNorrisFacts-fr contacted !'))
-            : drupal_set_message(t('Can\'t contact ChuckNorrisFacts-fr'),'error')
-    ;
+    ? drupal_set_message(t('ChuckNorrisFacts-fr contacted !'), 'status', FALSE)
+    : drupal_set_message(t('Can\'t contact ChuckNorrisFacts-fr'), 'error', FALSE)
+  ;
 }

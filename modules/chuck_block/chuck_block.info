@@ -1,0 +1,7 @@
+name = chuck_block
+description = Example of block using chuck_api
+core = 7.x
+package = ChuckNorrisFacts
+version = 7.x-1.0
+dependencies[] = chuck_api
+

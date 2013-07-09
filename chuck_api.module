@@ -1,19 +1,21 @@
 <?php
 
+module_load_include('inc', 'chuck_api');
+
 /**
-* Implements hook_menu();
-*/
+ * Implements hook_menu();
+ */
 function chuck_api_menu() {
-  $items = array() ;
-  
+  $items = array();
+
   $items['admin/config/services/chucknorrisfacts'] = array(
-     'title' => t('API configuration'),
-     'description' => t('ChuckNorrisFacts-fr Interface configuration'),
+    'title' => t('API configuration'),
+    'description' => t('ChuckNorrisFacts-fr Interface configuration'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('chuck_page_form'),
-     'access arguments' => array('access content'),
-     'file' => 'chuck_api.pages.inc'
+    'access arguments' => array('access content'),
+    'file' => 'chuck_api.admin.inc'
   );
-  
+
   return $items;
 }
