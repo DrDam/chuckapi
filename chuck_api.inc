@@ -15,7 +15,7 @@ function chuck_api_ping() {
 function chuck_api_simple_fact() {
   $data = chuck_api_request('txt', 'alea', 1);
 
-  return $data[0]->fact;
+  return (isset($data[0]->fact))? $data[0]->fact : '';
 }
 
 function chuck_api_simple_request($page = '') {

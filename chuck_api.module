@@ -9,7 +9,7 @@ function chuck_api_menu() {
   $items = array();
 
   $items['admin/config/services/chucknorrisfacts'] = array(
-    'title' => t('API configuration'),
+    'title' => t('ChuckNorrisFacts-fr API configuration'),
     'description' => t('ChuckNorrisFacts-fr Interface configuration'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('chuck_page_form'),

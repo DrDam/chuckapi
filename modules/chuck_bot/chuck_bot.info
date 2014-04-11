@@ -1,7 +1,7 @@
 name = chuck_bot
 description = bot module with chuck_api
 core = 7.x
-package = ChuckNorrisFacts
+package = Bot
 version = 7.x-1.x
 dependencies[] = chuck_api
 dependencies[] = bot
